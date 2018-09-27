@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  middleware: 'isSignedIn'
+  middleware: 'isAuthenticated'
 }
 </script>
