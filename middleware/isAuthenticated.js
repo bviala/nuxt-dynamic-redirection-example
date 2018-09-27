@@ -1,10 +1,10 @@
-export default function ({ store, router, route }) {
+export default function ({ store, redirect, route }) {
   // If the user is not authenticated
   if (!store.state.authenticated) {
-    console.log('/middleware/isAuthenticated.js : Holding page in the store: ' + route.fullPath)
-    store.commit('holdPage', route.fullPath) // hold the page for further redirection after successful login
-    console.log('/middleware/isAuthenticated.js : Reading hold page from the store: ' + store.state.holdPage) // this works well, you can read the page in terminal when SSR and in browser console when CSR
-    /* return redirect('/login') */
-    router.push('/login')
+    // store the page the user attempted to see
+    store.commit('setRedirectAfterSignIn', route.fullPath) // Only works for CSR redirection, as SSR redirection will clear the store
+    
+    // redirect to /login page
+    return redirect(`/login?redirect=${route.fullPath}`) // put the path as a redirection param so that nuxtServerInit can populate the store
   }
 }
