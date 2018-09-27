@@ -2,13 +2,14 @@
 
 Files of interest:
 
-/pages/secret.vue
-/pages/login.vue
-/middleware/isAuthenticated.js
-/store/index.js
+* /pages/secret.vue
+* /pages/login.vue
+* /middleware/isAuthenticated.js
+* /store/index.js
 
-Try to access /secret. Because of the middleware, you will be redirected to /login.
-You can check in your terminal that /secret is correctly hold in the store server side.
+Try to access /secret.  
+Because of the middleware, you will be redirected to /login.  
+You can check in your terminal that /secret is correctly hold in the store server side.  
 Open the browser console and click on the login button. You will see that client side the holdPage state is still null.
 
 ## Build Setup
