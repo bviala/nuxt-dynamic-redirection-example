@@ -20,7 +20,7 @@ const createStore = () => {
     actions: {
       signIn ({ commit, state }) {
         commit('signedIn')
-        console.log('Reading hold page from the store: ' + state.holdPage) // this does not work, it's always null
+        console.log('/store/index.js : Reading holdPage from the store: ' + state.holdPage) // this does not work with SSR redirection, it's null
         if ( state.holdPage ) {
           this.$router.push(state.holdPage)
         } else {
