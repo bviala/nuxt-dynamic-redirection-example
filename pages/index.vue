@@ -3,7 +3,10 @@
     <div class="links">
       <nuxt-link
         to="/secret"
-        class="button--green">GO TO /SECRET</nuxt-link>
+        class="button--green">GO TO /secret</nuxt-link>
+      <nuxt-link
+        to="/anotherSecret"
+        class="button--green">GO TO /anotherSecret</nuxt-link>
     </div>
   </section>
 </template>
